@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Dashboard - Brand</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+</head>
+{% block content %}
+<body id="page-top">
+    <div id="wrapper">
+        <div class="d-flex flex-column" id="content-wrapper">
+            <div id="content">
+
+                <div class="container-fluid">
+                    <div class="d-sm-flex justify-content-between align-items-center mb-4">
+                        <h3 class="text-dark mb-0">Dashboard</h3>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-xl-3 mb-4">
+                            <div class="card shadow border-start-primary py-2">
+                                <div class="card-body">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col me-2">
+                                            <div class="text-uppercase text-primary fw-bold text-xs mb-1"><a href="{% url 'lista_lotes' %}" class="btn ">Ver Lotes</a></div>
+                                          
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-3 mb-4">
+                            <div class="card shadow border-start-success py-2">
+                                <div class="card-body">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col me-2">
+                                            <div class="text-uppercase text-success fw-bold text-xs mb-1"><a href="{% url 'criar_lote' %}" class="btn ">Criar Lote</a></div>
+                                        </div>
+                                   
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-3 mb-4">
+                            <div class="card shadow border-start-info py-2">
+                                <div class="card-body">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col me-2">
+                                            <div class="text-uppercase text-info fw-bold text-xs mb-1"><a href="{% url 'criar_ensaio' %}" class="btn">Criar Ensaio</a></div>
+                                            <div class="row g-0 align-items-center">
+                                                <div class="col-auto">
+                
+                                                </div>
+                                                <div class="col">
+                                               
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-3 mb-4">
+                            <div class="card shadow border-start-warning py-2">
+                                <div class="card-body">
+                                    <div class="row align-items-center no-gutters">
+                                        
+                                        <div class="text-uppercase text-info fw-bold text-xs mb-1"> <a href="{% url 'lista_caracteristicas' %}" class="btn ">Características</a>
+                                  
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="row">
+                                <div class="col-lg-4 col-xxl-3 mb-4">
+                                    <div class="card text-white bg-success shadow">
+                                        <div class="card-body">
+                                            <p class="m-0">Lotes Dentro da Faixa</p>
+                                            <p class="text-white-50 small m-0">#1cc88a</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-xxl-3 mb-4">
+                                    <div class="card text-white bg-warning shadow">
+                                        <div class="card-body">
+                                            <p class="m-0">Lotes Pendentes</p>
+                                            <p class="text-white-50 small m-0">#f6c23e</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-xxl-3 mb-4">
+                                    <div class="card text-white bg-danger shadow">
+                                        <div class="card-body">
+                                            <p class="m-0">Lotes Fora da Faixa</p>
+                                            <p class="text-white-50 small m-0">#e74a3b</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    </div>
+
+{% endblock %}

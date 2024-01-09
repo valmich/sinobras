@@ -1,0 +1,20 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Características de Qualidade</h1>
+    <h2>Características Quantitativas</h2>
+    <ul>
+        {% for caracteristica in caracteristicas_quantitativas %}
+            <li>{{ caracteristica.descricao }} ({{ caracteristica.limite_inferior }} - {{ caracteristica.limite_superior }})</li>
+        {% endfor %}
+    </ul>
+    <h2>Características Qualitativas</h2>
+    <ul>
+        {% for caracteristica in caracteristicas_qualitativas %}
+            <li>{{ caracteristica.descricao }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

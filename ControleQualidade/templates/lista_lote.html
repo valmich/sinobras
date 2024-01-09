@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container">
+    <h1>Lista de Lotes de Aço</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Número do Lote</th>
+          <th>Data de Produção</th>
+          <th>Status</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for lote in lotes %}
+        <tr>
+          <td>{{ lote.numero_lote }}</td>
+          <td>{{ lote.data_producao|date:"d/m/Y" }}</td>
+          <td>{{ lote.avaliar_lote }}</td>
+          <td>
+            <a href="{% url 'avaliar_lote' lote.numero_lote %}" class="btn btn-primary btn-sm">Avaliar</a>
+            <a href="{% url 'editar_lote' lote.id %}" class="btn btn-primary btn-sm">Editar</a>
+            <a href="{% url 'deletar_lote' lote.id %}" class="btn btn-danger btn-sm">Apagar</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

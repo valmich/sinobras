@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <!-- Mensagens e Erros -->
+    {% if messages %}
+        <div class="alert alert-warning" role="alert">
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    {% if erros %}
+        <div class="alert alert-danger" role="alert">
+            <h4 class="alert-heading">Erros de Validação:</h4>
+            <p>{{ erros }}</p>
+        </div>
+    {% endif %}
+    <a href="{% url 'lista_lotes' %}" class="btn btn-secondary">Voltar</a>
+    <div class="container mt-4">
+        <h1>Detalhes da Avaliação do Lote de Aço</h1>
+        <h2>Lote: {{ lote.numero_lote }}</h2>
+        <p>Data de Produção: {{ lote.data_producao|date:"d/m/Y" }}</p>
+    
+        <h3>Resultados da Avaliação:</h3>
+        <div class="row">
+            {% for ensaio in lote.ensaios.all %}
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h4 class="card-title">Ensaio ID: {{ ensaio.id }} - Data: {{ ensaio.data_ensaio|date:"d/m/Y" }}</h4>
+                            <p>Alongamento (%): {{ ensaio.alongamento }}</p>
+                            <p>Resistência de Escoamento (MPa): {{ ensaio.resistencia_escoamento }}</p>
+                            <p>Resistência de Ruptura (MPa): {{ ensaio.resistencia_ruptura }}</p>
+                            <p>Massa Linear (Kg/m): {{ ensaio.massa_linear }}</p>
+                            <ul class="list-group list-group-flush">
+                                {% for descricao, resultado in ensaio.valida_ensaio.items %}
+                                    <li class="list-group-item">{{ descricao }}: {{ resultado }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+</div>
+{% endblock %}
