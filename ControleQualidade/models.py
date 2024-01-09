@@ -64,7 +64,7 @@ class LoteAco(models.Model):
                 break
 
         return 'Fora de Faixa' if fora_de_faixa else 'Dentro da Faixa'
-    
+   # Classe que define o modelo de um ensaio mecânico realizado em um lote de aço.
 class EnsaioMecanico(models.Model):
     lote = models.ForeignKey(LoteAco, on_delete=models.CASCADE, related_name='ensaios')
     data_ensaio = models.DateField(_('Data do Ensaio'))
