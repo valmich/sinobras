@@ -1,6 +1,6 @@
 from django.contrib.auth.views import LogoutView
 from django.urls import path, include
-from . import views  # Importe as views do seu projeto
+from . import views  # Importe as views
 
 urlpatterns = [
     path('', views.home, name='home'),

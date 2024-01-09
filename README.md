@@ -45,10 +45,37 @@ Antes de iniciar o servidor pela primeira vez, é necessário aplicar as migraç
    - Digite `python manage.py migrate` e pressione Enter.
 
 Essas migrações configuram o banco de dados com as tabelas necessárias para o funcionamento do Django e do seu projeto.
+
+5. **Execute o Comando para Criar o Superusuário**:
+   - Digite `python manage.py createsuperuser` e pressione Enter.
+
+6. **Insira as Informações do Superusuário**:
+   - Quando solicitado, forneça o nome de usuário, e-mail e senha para o superusuário.
+
+   - Após esses passos, você terá criado um superusuário. 
+   - Use essas credenciais para acessar o painel administrativo do Django em `http://localhost:8000/admin`.
+## Criação de Características
+
+### Acesso Administrativo:
+- A criação de características é feita exclusivamente através da interface administrativa do Django.
+- Acesse `/admin` e faça login com credenciais de superusuário.
+
+### Criar Característica:
+- Na interface administrativa, localize a seção de características (quantitativas ou qualitativas).
+- Clique em 'Adicionar' e preencha os campos necessários.
+- Salve a nova característica.
+
+**Nota**: Atualmente, a criação de características só é possível via interface administrativa, pois não há views específicas para isso.
+
+### Interações com Características:
+- Visualização e gestão das características associadas aos lotes são feitas através das views do projeto.
+- Navegue pelo sistema para gerenciar e visualizar essas características.
+
 ## Acesso ao Sistema
 Faça login usando suas credenciais de usuário.
 
 ## Gerenciamento de Lotes de Aço
+ - interação com o dashboard em  http://127.0.0.1:8000/ControleQualidade/
 ### Criação de Lotes
 - Navegue até a aba 'Lotes'.
 - Clique em 'Criar Novo Lote'.
